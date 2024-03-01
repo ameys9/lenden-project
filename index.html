@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address Updater</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Address Updater</h1>
+
+    <!-- Form to add new address -->
+    <div class="container" >
+
+        <div id="add-form" class="form-container">
+            <h2>Add New Address</h2>
+            <form id="add-address-form">
+                <!-- Address fields -->
+            <input type="text" id="street" placeholder="Street">
+            <input type="text" id="city" placeholder="City">
+            <input type="text" id="state" placeholder="State">
+            <input type="text" id="zip" placeholder="Zip Code">
+            <button type="submit">Add Address</button>
+        </form>
+    </div>
+    
+    <!-- Display existing addresses -->
+    <div id="address-list">
+        <h2>Existing Addresses</h2>
+        <ul id="addresses"></ul>
+    </div>
+</div>
+
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f8f9fa; /* Light gray background */
+}
+
+
+h1, h2 {
+    text-align: center;
+    color: #343a40; /* Dark gray text */
+}
+
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fff; /* White background */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}
+
+.form-container input {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ced4da; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    box-sizing: border-box;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff; /* Blue button */
+    color: #fff;
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.form-container button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+#address-list {
+    margin-top: 40px;
+}
+
+#addresses {
+    list-style: none;
+    padding: 0;
+}
+
+#addresses li {
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Align items evenly */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+#addresses li:hover {
+    transform: translateY(-5px); /* Lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+.buttons-container {
+    display: flex; /* Use flexbox */
+}
+
+.delete-btn, .edit-btn {
+    padding: 12px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background color and text color */
+}
+
+.delete-btn {
+    background-color: #dc3545; /* Red delete button */
+    color: #fff;
+    margin-right: 10px; /* Add space between delete and edit */
+}
+
+.delete-btn:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+.edit-btn {
+    background-color: #ffc107; /* Yellow edit button */
+    color: #212529;
+}
+
+.edit-btn:hover {
+    background-color: #e0a800; /* Darker yellow on hover */
+}
