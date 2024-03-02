@@ -1,8 +1,7 @@
 // Mock data for demonstration
-// Mock data for demonstration
 let addresses = [
-    { id: 1, street: "123 Main St", city: "Cityville", state: "ST", zip: "123456" },
-    { id: 2, street: "456 Elm St", city: "Townsville", state: "TS", zip: "678900" }
+    { id: 1, street: "123 Main St", city: "Cityville", state: "ST", zip: "12345" },
+    { id: 2, street: "456 Elm St", city: "Townsville", state: "TS", zip: "67890" }
 ];
 
 // Function to display addresses
@@ -37,15 +36,14 @@ function displayAddresses() {
         addressesList.appendChild(li);
     });
 }
-
-// Function to delete address
 function deleteAddress(id) {
     addresses = addresses.filter(address => address.id !== id);
     displayAddresses();
+
+    // Reset form
+    document.getElementById("add-address-form").reset();
 }
 
-// Call displayAddresses function when the page loads
-window.addEventListener("load", displayAddresses);
 // Function to add new address
 function addAddress(event) {
     event.preventDefault();
@@ -69,7 +67,6 @@ function addAddress(event) {
             displayAddresses();
             // Reset form
             document.getElementById("add-address-form").reset();
-            window.location.href = "index.html";
         }
     } else {
         alert("Please fill out all address fields.");
@@ -91,49 +88,5 @@ function editAddress(id) {
 // Event listener for form submission
 document.getElementById("add-address-form").addEventListener("submit", addAddress);
 
-// Indian states and cities data
-const indianStates = ["Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"];
-const indianCities = {
-    "Andhra Pradesh": ["Visakhapatnam", "Vijayawada", "Guntur", "Nellore", "Kurnool", "Rajahmundry", "Tirupati", "Kakinada"],
-    "Arunachal Pradesh": ["Itanagar", "Naharlagun", "Tawang", "Ziro", "Bomdila", "Pasighat", "Roing", "Tezu"],
-    // Add cities for other states...
-};
-
-// Function to populate dropdown with options
-function populateDropdown(dropdown, options) {
-    dropdown.innerHTML = "";
-    options.forEach(option => {
-        const optionElement = document.createElement("option");
-        optionElement.value = option;
-        optionElement.textContent = option;
-        dropdown.appendChild(optionElement);
-    });
-}
-
-// Function to initialize the form with Indian states and cities
-function initializeForm() {
-    const stateDropdown = document.getElementById("state");
-    populateDropdown(stateDropdown, indianStates);
-    stateDropdown.addEventListener("change", () => {
-        const selectedState = stateDropdown.value;
-        const cityDropdown = document.getElementById("city");
-        populateDropdown(cityDropdown, indianCities[selectedState]);
-    });
-}
-
-// Function to display existing addresses
-function displayExistingAddresses() {
-    const addressList = document.getElementById("addresses");
-    addressList.innerHTML = "";
-    addresses.forEach(address => {
-        const listItem = document.createElement("li");
-        listItem.textContent = `${address.street}, ${address.city}, ${address.state} - ${address.zip}`;
-        addressList.appendChild(listItem);
-    });
-}
-
-// Call initializeForm and displayExistingAddresses functions when the page loads
-window.addEventListener("load", () => {
-    initializeForm();
-    displayExistingAddresses();
-});
+// Initial display of addresses
+displayAddresses();
